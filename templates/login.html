@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+
+  <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dist/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
+<!------ Include the above in your HEAD tag ---------->
+
+<style>
+    body{
+        background-color:black;
+    }
+    .login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    background:#fff;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#000;
+}
+
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+}
+</style>
+<div class="container login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 login-form-1">
+            <h3>Login</h3>
+            <form method="post" action ="" role="form" >
+                {% if error %}
+                    <b style="color:red"> {{ error }}</b>
+                {% endif %}
+                <div class="form-group">
+                    <label> Username:</label>
+                    <input type="text" name="username" class="form-control" placeholder="Your username" required autofocus automplete="off">
+                </div>
+                <div class="form-group">
+                    <label> Password: </label>
+                    <input type="password" name="password" class="form-control" placeholder="Your Password " value="" required />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-md" value="Login" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="btnForgetPwd">Forget Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

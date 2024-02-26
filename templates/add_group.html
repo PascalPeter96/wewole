@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% block title %} Add Group {% endblock %}
+{% block content %}
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Add </span> Group</h4>
+
+              <div class="row">
+             
+                
+
+                <!-- Form controls -->
+                
+
+           
+                <div class="col-xl-8">
+                  <div class="card mb-4">
+                    <h5 class="card-header">Add Group</h5>
+               <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Gropu Name <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="group_name" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Address<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="g_address" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Number of Members<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="number" required>
+
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Contact<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="gcontact" required>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="submit-section">
+                    <button class="btn btn-primary submit-btn" style="margin-top: 30px; margin-left: 250px;">Submit</button>
+                  </div>
+                </form>
+              </div>
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+                     {% endblock%}

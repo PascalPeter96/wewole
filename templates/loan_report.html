@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+{% block title %} Loan Reports {% endblock %}
+{% block content %}
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Page Content -->
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="page-title">Loan Reports</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+									<li class="breadcrumb-item active">Loan Reports</li>
+								</ul>
+							</div>
+							<div class="col-auto float-right ml-auto">
+								<a href="create-estimate.html" class="btn add-btn"><i class="fa fa-plus"></i> Loan Reports</a>
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+					
+					<!-- Search Filter -->
+					<div class="row filter-row">
+						<div class="col-sm-6 col-md-3">  
+							<div class="form-group form-focus">
+								<div class="cal-icon">
+									<input class="form-control floating datetimepicker" type="date">
+								</div>
+								<label class="focus-label">From</label>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-3">  
+							<div class="form-group form-focus">
+								<div class="cal-icon">
+									<input class="form-control floating datetimepicker" type="date">
+								</div>
+								<label class="focus-label">To</label>
+							</div>
+						</div>
+						
+						<div class="col-sm-6 col-md-3">  
+							<a href="#" class="btn btn-success btn-block"> Search </a>  
+						</div>     
+                    </div>
+					<!-- /Search Filter -->
+					
+					<div class="row">
+						<div class="col-md-9">
+							<div class="table-responsive">
+					{% if data|length > 0 %}
+				         <table class="table table-bordered">
+				              <thead>
+				                <tr>
+				                    <th>Date</th>
+									<th>Client</th>
+									<th>Loan Out</th>
+									<th>Loanin</th>
+									<th>Due Date</th>
+		                    
+				                     
+				                </tr>
+				              </thead>
+				              <tbody>
+				                {% for row in data %}
+				                <tr>
+				                  <td>{{ row.date }}</td>
+	            					<td>{{ row.fullname }}</td>
+	            					<td>{{ row.amount|currency_format }}</td>
+	            					<td>{{ row.paid|currency_format }}</td>
+	            					<td>{{ row.due_date }}</td>
+			                                       
+				                  </td>
+				                </tr>
+				                {% endfor %}
+				              </tbody>
+				         </table>
+				     {% endif %}
+					</div>
+				</div>
+				<div class="col-md-3">
+							<div class="table-responsive">
+					{% if data|length > 0 %}
+				         <table class="table table-bordered">
+				              <thead style="color: red;">
+				                <tr>
+				                    
+									<th style="color: red;">Total L.Out</th>
+									<th style="color: red;">Total L.in</th>
+										                    
+				                     
+				                </tr>
+				              </thead>
+				              <tbody>
+				                {% for row in data %}
+				                <tr>
+				                   <td>{{ row.amount|currency_format }}</td>
+	            					<td>{{ row.paid|currency_format }}</td>
+	            							                                       
+				                  </td>
+				                </tr>
+				                {% endfor %}
+				              </tbody>
+				         </table>
+				     {% endif %}
+					</div>
+				</div>
+			</div>
+        </div>
+								<!-- /Page Content -->
+								
+								
+							
+				            </div>
+							<!-- /Page Wrapper -->
+							
+				        </div>
+						<!-- /Main Wrapper -->
+						
+						{% endblock %}

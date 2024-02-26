@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block title %} Savings {% endblock %}
+{% block content %}
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Loan </span> Application</h4>
+
+              <div class="row">
+             
+                
+
+                <!-- Form controls -->
+                
+
+           
+                <div class="col-xl-8">
+                  <div class="card mb-4">
+                    <h5 class="card-header">Loan Application</h5>
+               <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Full Name <span class="text-danger">*</span></label>
+                        <select name="brower_id" class="form-control" required >
+                          <option value="">--Please choose an option--</option>
+                          {% for a in rows %}
+                          <option value="{{ a.brower_id }}">{{ a.fullname }} UGX:{{ a.deposits }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Amount To Deposit<span class="text-danger">*</span></label>
+                        <input class="form-control" type="number" name="deposit" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Deposited By<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="banked" required>
+
+                      </div>
+                    </div>
+                    </div>
+                  <div class="submit-section">
+                    <button class="btn btn-primary submit-btn" style="margin-top: 30px; margin-left: 250px;">Submit</button>
+                  </div>
+                </form>
+              </div>
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+                     {% endblock%}

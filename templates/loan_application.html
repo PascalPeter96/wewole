@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% block title %} Loan Application {% endblock %}
+{% block content %}
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Loan </span> Application</h4>
+
+              <div class="row">
+             
+                
+
+                <!-- Form controls -->
+                
+
+           
+                <div class="col-xl-8">
+                  <div class="card mb-4">
+                    <h5 class="card-header">Loan Application</h5>
+               <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Full Name <span class="text-danger">*</span></label>
+                        <select name="group_id" class="form-control" required >
+                          <option value="">--Please choose an option--</option>
+                          {% for b in sales %}
+                          <option value="{{b.group_id}}">{{b.group_name}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Amount Borrowed<span class="text-danger">*</span></label>
+                        <input class="form-control" type="number" name="amount" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Intrest Rate<span class="text-danger">*</span></label>
+                         <select name="interest" class="form-control" required >
+                          <option value="">--Please choose an option--</option>
+                          <option value="20">20</option>
+                          <option value="10">10</option>
+                          <option value="5">5</option>
+                        </select>
+                        </div>
+                    </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Duration in Months<span class="text-danger">*</span></label>
+                         <select name="duration" class="form-control" required >
+                          <option value="">--Please choose an option--</option>
+                          <option value="3">3</option>
+                          <option value="2">2</option>
+                          <option value="1">1</option>
+                        </select> 
+                     </div>
+                    </div>
+                    
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Due Date<span class="text-danger">*</span></label>
+                         <input class="form-control" type="date" name="due_date" required>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="submit-section">
+                    <button class="btn btn-primary submit-btn" style="margin-top: 30px; margin-left: 250px;">Submit</button>
+                  </div>
+                </form>
+              </div>
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+                     {% endblock%}

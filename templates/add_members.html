@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+{% block title %} Add Members {% endblock %}
+{% block content %}
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Add </span> Members</h4>
+
+              <div class="row">
+             
+                
+
+                <!-- Form controls -->
+                
+
+           
+                <div class="col-xl-8">
+                  <div class="card mb-4">
+                    <h5 class="card-header">Add Members</h5>
+               <div class="modal-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Full Name <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="fullname" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Address<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="address" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Occupation<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="occupation" required>
+
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Salary<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="salary" required>
+
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Contact<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="contact" required>
+
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Next Of Kin<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="next_kin" required>
+
+                      </div>
+                    </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="col-form-label">Group Name<span class="text-danger">*</span></label>
+                         <select name="group_id" class="form-control" required >
+                          <option value="">--Please choose an option--</option>
+                          {% for b in sales %}
+                          <option value="{{b.group_id}}">{{b.group_name}}</option>
+                          {% endfor %}
+                        </select>
+
+                         </div>
+
+                      </div>
+
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Next Of Kin Contact<span class="text-danger">*</span></label>
+                         <input class="form-control" type="text" name="kin_contact" required>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="submit-section">
+                    <button class="btn btn-primary submit-btn" style="margin-top: 30px; margin-left: 250px;">Submit</button>
+                  </div>
+                </form>
+              </div>
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+            <!-- / Content -->
+
+                     {% endblock%}

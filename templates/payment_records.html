@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block title %} Payment Records {% endblock %}
+{% block content %}
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <!-- Bordered Table -->
+      <div class="card">
+        <h5 class="card-header">Loan Payment Records</h5>
+        <div class="card-body">
+          <div class="table-responsive text-nowrap">
+        {% if data|length > 0 %}
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Amount Paid</th>
+                    
+                     
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in data %}
+                <tr>
+                  <td>{{ row.date }}</a> </td>
+                  <td>{{ row.group_name }}</a> </td>
+                    <td>{{ row.paid|currency_format }}</td>
+                                       
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!--/ Bordered Table -->
+    </div>
+    <!-- / Content -->
+{% endblock %}
